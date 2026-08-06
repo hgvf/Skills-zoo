@@ -1,0 +1,1030 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/annual_report_summary_v2.schema.json",
+  "title": "Annual Report Summary V2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "document",
+    "company",
+    "headline",
+    "tags",
+    "business_segments",
+    "product_portfolio",
+    "research_and_development",
+    "revenue_mix",
+    "customers",
+    "supply_chain",
+    "financial_highlights",
+    "operating_review",
+    "industry_and_market",
+    "competition",
+    "company_challenges",
+    "growth_drivers",
+    "future_strategy",
+    "risks",
+    "financial_and_accounting_flags",
+    "governance_flags",
+    "investment_view",
+    "source_evidence",
+    "data_quality"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "annual_report_summary_v2"
+    },
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "market",
+        "document_type",
+        "fiscal_year",
+        "reporting_currency",
+        "language"
+      ],
+      "properties": {
+        "market": {
+          "type": "string",
+          "enum": [
+            "TW",
+            "US",
+            "JP",
+            "KR"
+          ]
+        },
+        "document_type": {
+          "type": "string"
+        },
+        "fiscal_year": {
+          "type": "string"
+        },
+        "fiscal_period_start": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "fiscal_period_end": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "filing_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reporting_currency": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "language": {
+          "type": "string",
+          "enum": [
+            "zh-TW",
+            "en",
+            "ja",
+            "ko"
+          ]
+        },
+        "is_audited": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "auditor_opinion": {
+          "type": "string",
+          "enum": [
+            "unqualified",
+            "qualified",
+            "adverse",
+            "disclaimer",
+            "not_applicable",
+            "unknown"
+          ]
+        }
+      }
+    },
+    "company": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "industry",
+        "industry_description",
+        "business_summary",
+        "business_model",
+        "value_chain_position",
+        "core_competencies",
+        "competitive_moats"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "name_english": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ticker": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "exchange": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "country": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "headquarters": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "industry": {
+          "type": "string"
+        },
+        "industry_subcategory": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "industry_description": {
+          "type": "string"
+        },
+        "business_summary": {
+          "type": "string"
+        },
+        "business_model": {
+          "type": "string"
+        },
+        "value_chain_position": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "core_competencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "competitive_moats": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "description",
+              "strength",
+              "evidence",
+              "source_reference"
+            ],
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "strength": {
+                "type": "string",
+                "enum": [
+                  "strong",
+                  "medium",
+                  "weak",
+                  "unknown"
+                ]
+              },
+              "evidence": {
+                "type": "string"
+              },
+              "source_reference": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "headline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "one_sentence_summary",
+        "stance",
+        "confidence",
+        "confidence_reason",
+        "key_change_vs_prior_year",
+        "main_investment_question"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "one_sentence_summary": {
+          "type": "string"
+        },
+        "stance": {
+          "type": "string",
+          "enum": [
+            "bullish",
+            "slightly_bullish",
+            "neutral",
+            "slightly_bearish",
+            "bearish"
+          ]
+        },
+        "confidence": {
+          "type": "string",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "confidence_reason": {
+          "type": "string"
+        },
+        "key_change_vs_prior_year": {
+          "type": "string"
+        },
+        "main_investment_question": {
+          "type": "string"
+        }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "business_segments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "segment_name",
+          "segment_description",
+          "growth_status",
+          "main_products",
+          "main_customers_or_markets",
+          "key_observations",
+          "source_reference"
+        ],
+        "properties": {
+          "segment_name": {
+            "type": "string"
+          },
+          "segment_description": {
+            "type": "string"
+          },
+          "value_chain_position": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "revenue": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "value": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "unit": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  "thousand",
+                  "million",
+                  "billion",
+                  null
+                ]
+              },
+              "currency": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "yoy_change_pct": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              }
+            }
+          },
+          "revenue_percentage": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "revenue_yoy_change_pct": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "operating_profit": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "value": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "unit": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  "thousand",
+                  "million",
+                  "billion",
+                  null
+                ]
+              },
+              "currency": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "yoy_change_pct": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              }
+            }
+          },
+          "operating_margin_pct": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "growth_status": {
+            "type": "string"
+          },
+          "main_products": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "main_customers_or_markets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_observations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "source_reference": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "product_portfolio": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "current_core_products",
+        "newly_commercialized_products",
+        "products_under_development",
+        "product_roadmap"
+      ],
+      "properties": {
+        "current_core_products": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "product_name",
+              "product_category",
+              "source_reference"
+            ],
+            "properties": {
+              "product_name": {
+                "type": "string"
+              },
+              "product_category": {
+                "type": "string"
+              },
+              "product_description": {
+                "type": "string"
+              },
+              "product_status": {
+                "type": "string"
+              },
+              "strategic_role": {
+                "type": "string"
+              },
+              "revenue": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "value": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "unit": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "enum": [
+                      "thousand",
+                      "million",
+                      "billion",
+                      null
+                    ]
+                  },
+                  "currency": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "yoy_change_pct": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  }
+                }
+              },
+              "revenue_percentage": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "revenue_yoy_change_pct": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "main_applications": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "end_markets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "competitive_advantages": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "competitive_weaknesses": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "source_reference": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "newly_commercialized_products": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "product_name",
+              "product_category",
+              "actual_progress",
+              "source_reference"
+            ],
+            "properties": {
+              "product_name": {
+                "type": "string"
+              },
+              "product_category": {
+                "type": "string"
+              },
+              "actual_progress": {
+                "type": "string"
+              },
+              "source_reference": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "products_under_development": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "product_name",
+              "product_category",
+              "technology_description",
+              "development_stage",
+              "source_reference"
+            ],
+            "properties": {
+              "product_name": {
+                "type": "string"
+              },
+              "product_category": {
+                "type": "string"
+              },
+              "technology_description": {
+                "type": "string"
+              },
+              "development_stage": {
+                "type": "string"
+              },
+              "source_reference": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "product_roadmap": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "time_horizon",
+              "direction",
+              "related_products_or_technologies",
+              "target_market",
+              "strategic_objective",
+              "evidence",
+              "source_reference"
+            ],
+            "properties": {
+              "time_horizon": {
+                "type": "string"
+              },
+              "direction": {
+                "type": "string"
+              },
+              "related_products_or_technologies": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "target_market": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "strategic_objective": {
+                "type": "string"
+              },
+              "evidence": {
+                "type": "string"
+              },
+              "source_reference": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "research_and_development": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rd_expense",
+        "rd_headcount",
+        "rd_headcount_percentage",
+        "rd_locations",
+        "successfully_developed_products_last_year",
+        "ongoing_rd_projects",
+        "future_rd_directions",
+        "patents_and_intellectual_property"
+      ],
+      "properties": {
+        "rd_expense": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "unit": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "enum": [
+                "thousand",
+                "million",
+                "billion",
+                null
+              ]
+            },
+            "currency": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "yoy_change_pct": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          }
+        },
+        "rd_headcount": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "rd_headcount_percentage": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "rd_locations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "successfully_developed_products_last_year": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "product_or_technology",
+              "category",
+              "achievement_description",
+              "development_result",
+              "commercial_status",
+              "strategic_significance",
+              "source_reference"
+            ],
+            "properties": {
+              "product_or_technology": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string"
+              },
+              "achievement_description": {
+                "type": "string"
+              },
+              "development_result": {
+                "type": "string"
+              },
+              "commercial_status": {
+                "type": "string"
+              },
+              "strategic_significance": {
+                "type": "string"
+              },
+              "source_reference": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "ongoing_rd_projects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "project_or_technology",
+              "category",
+              "objective",
+              "development_stage",
+              "strategic_significance",
+              "source_reference"
+            ],
+            "properties": {
+              "project_or_technology": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string"
+              },
+              "objective": {
+                "type": "string"
+              },
+              "development_stage": {
+                "type": "string"
+              },
+              "strategic_significance": {
+                "type": "string"
+              },
+              "source_reference": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "future_rd_directions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "direction",
+              "related_technology",
+              "business_reason",
+              "target_market_or_customer",
+              "time_horizon",
+              "expected_impact",
+              "source_reference"
+            ],
+            "properties": {
+              "direction": {
+                "type": "string"
+              },
+              "related_technology": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "business_reason": {
+                "type": "string"
+              },
+              "target_market_or_customer": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "time_horizon": {
+                "type": "string"
+              },
+              "expected_impact": {
+                "type": "string"
+              },
+              "source_reference": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "patents_and_intellectual_property": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+    "revenue_mix": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "dimension",
+          "name",
+          "percentage",
+          "description",
+          "calculation_status",
+          "source_reference"
+        ],
+        "properties": {
+          "dimension": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "revenue": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "value": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "unit": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  "thousand",
+                  "million",
+                  "billion",
+                  null
+                ]
+              },
+              "currency": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "yoy_change_pct": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              }
+            }
+          },
+          "percentage": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "yoy_change_pct": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "major_products": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "major_customers_or_uses": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "calculation_status": {
+            "type": "string",
+            "enum": [
+              "reported",
+              "calculated",
+              "estimated",
+              "unknown"
+            ]
+          },
+          "source_reference": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "customers": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "supply_chain": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "financial_highlights": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "industry_and_market": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "competition": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "future_strategy": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "investment_view": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "data_quality": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "operating_review": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "company_challenges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "growth_drivers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "financial_and_accounting_flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "governance_flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "source_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    }
+  }
+}
