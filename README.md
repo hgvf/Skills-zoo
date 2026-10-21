@@ -10,3 +10,4 @@
 | [`supply-chain-bottleneck/`](./supply-chain-bottleneck/) | 分析產業供應鏈、關鍵環節、產能限制、替代性與潛在瓶頸。 |
 | [`supply-chain-intelligence-daily/`](./supply-chain-intelligence-daily/) | 爬取供應鏈、產業消息，足以影響供應鏈狀態、價格等資訊。 |
 | [`military-contract/`](./military-contract/) | 爬取國防部公開決標合約 |
+| [`war-atlas/`](./war-atlas/) | 幫助理解戰役細節 |
